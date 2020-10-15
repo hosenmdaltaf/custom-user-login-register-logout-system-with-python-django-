@@ -1,0 +1,31 @@
+{% load static %}
+
+<h1>Register Page</h1>
+
+       
+ 
+    <link href='https://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+<div class="wrap">
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        <fieldset>
+            <legend><h3>Register </h3></legend>
+
+               <input type="text" name="email" id="name" placeholder="email" required/>
+               <input type="text" name="username" id="name" placeholder="name" required/>
+               <input type="text" name="password1" id="name" placeholder="Enter Password." required/>
+               <input type="text" name="password2" id="name" placeholder="Re-enter Password.." required/>
+
+              
+
+        <input type="submit"  value="Register Account ">
+        <p> Already have an Account?<a href="{% url 'login' %}">Login</a></p>
+
+
+        </fieldset>
+    </form>
+    {{form.errors}}
+</div>

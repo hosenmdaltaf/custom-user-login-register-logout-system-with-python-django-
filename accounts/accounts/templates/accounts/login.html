@@ -1,0 +1,33 @@
+{% load static %}
+
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+<link href="{% static 'css/login.css' %}" rel="stylesheet">
+
+<div class="testbox">
+
+
+   <form  method="post">
+       {% csrf_token %}
+
+      <hr>
+    <div class="accounttype">
+		 <h1>Login</h1>
+
+    </div>
+  <hr>
+
+  <input type="text" name="email" id="name" placeholder="email" required/>
+
+  <input type="password" name="password" id="name" placeholder="Password" required/>
+
+   <p>Don't have account!<a href="{% url 'register' %}">Register</a></p>
+   <input class="button" type="submit" value="Login">
+
+   {% for message in messages %}
+       <p>{{message}}</p>
+   {% endfor %}
+
+  </form>
+</div>
